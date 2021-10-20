@@ -1,4 +1,6 @@
-export const instanceDetails: InstanceDetails[] = [
+import { BaseServiceDetails } from '../../types'
+
+export const instanceDetails: Ec2InstanceDetails[] = [
   {
     name: 't3.nano',
     pricePerHour: 0.0052,
@@ -85,9 +87,7 @@ export const instanceDetails: InstanceDetails[] = [
   },
 ]
 
-interface InstanceDetails {
-  name: string
-  pricePerHour: number
+interface Ec2InstanceDetails extends BaseServiceDetails {
   ram: number
   vCpu: number
 }
