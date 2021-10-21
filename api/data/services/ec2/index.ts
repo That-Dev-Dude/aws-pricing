@@ -1,6 +1,6 @@
 import { BaseServiceDetails } from '../../types'
 
-export const instanceDetails: Ec2InstanceDetails[] = [
+export const ec2InstanceDetails: Ec2InstanceDetails[] = [
   {
     name: 't3.nano',
     pricePerHour: 0.0052,

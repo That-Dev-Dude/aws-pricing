@@ -7,7 +7,7 @@
     "declaration": true,
     "outDir": "dist/",
     "strict": true,
-    "baseUrl": "src",
+    "baseUrl": "data",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
