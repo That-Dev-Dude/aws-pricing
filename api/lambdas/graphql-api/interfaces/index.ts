@@ -25,3 +25,8 @@ export type Resolver<ReturnType, Variables = Record<string, string>> = (
   variables: Variables,
   context: GraphQLContext
 ) => Promise<ReturnType>
+
+/** Replaces the generated types that are price per month, with the data set that is correctly pricePerHour */
+export type PricePerHourDetail<Detail> = Omit<Detail, 'pricePerMonth'> & {
+  pricePerHour: number
+}

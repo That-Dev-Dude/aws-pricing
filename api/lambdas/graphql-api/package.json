@@ -11,6 +11,7 @@
   "dependencies": {
     "@caldwell619/common-aws-actions": "^0.0.15",
     "graphql": "^15.3.0",
-    "graphql-scalars": "^1.10.1"
+    "graphql-scalars": "^1.10.1",
+    "fuse.js": ""
   }
 }

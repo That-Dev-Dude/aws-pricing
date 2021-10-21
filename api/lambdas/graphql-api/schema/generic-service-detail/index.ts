@@ -3,6 +3,12 @@ export const ServiceDetailSchema = `#graphql
     rds
     ec2
     fargate
+    elasticache
+  }
+
+  enum SortDirection {
+    asc
+    desc
   }
 
   type ServiceDetail {

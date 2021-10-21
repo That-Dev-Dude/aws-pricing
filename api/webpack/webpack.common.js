@@ -10,7 +10,7 @@ const config = {
   resolve: {
     alias: {
       '@': path.resolve(process.cwd(), 'lambdas/'),
-      '@generated': path.resolve(process.cwd()),
+      '@generated': path.resolve(process.cwd(), 'generated'),
     },
     extensions: ['.js', '.json', '.ts'],
   },
