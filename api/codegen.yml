@@ -9,5 +9,4 @@ generates:
       - typescript
       - typescript-operations
     config:
-      wrapEntireFieldDefinitions: true
-      entireFieldWrapperValue: T | (() => T | Promise<T>)
+      skipTypename: true

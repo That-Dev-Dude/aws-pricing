@@ -13,7 +13,8 @@ export const RdsSchema = `#graphql
   }
   type RdsDetail {
     name: String!
-    pricePerMonth: Float!
+    service: Service!
+    pricePerMonth: Float
   }
   
   enum RdsStorageDetailSort {

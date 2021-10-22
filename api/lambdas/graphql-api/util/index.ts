@@ -1,5 +1,7 @@
-import { SortDirection } from '@/../generated'
 import Fuse from 'fuse.js'
+import arraySort from 'array-sort'
+
+import { SortDirection } from '@generated/index'
 
 export const stitchSchema = (...schemas: string[]): string => {
   return schemas.reduce((accumulator, currentValue) => accumulator + '\n' + currentValue, '')
@@ -42,15 +44,22 @@ export const handleFilterAndSort = <TData>({
   sortKey,
 }: HandleFilterAndSortArgs<TData>) => {
   let results = baseList
-  const numericSortDetermination = sortDirection === SortDirection.Desc ? -1 : 1
   if (searchTerm) results = handleSearchResults(FuseSearch, searchTerm, baseList)
   if (sortKey) {
-    results = [...results].sort((a, b) =>
-      a[sortKey] < b[sortKey] ? numericSortDetermination : numericSortDetermination * -1
-    )
+    results = arraySort(results, sortKey as string, { reverse: sortDirection === SortDirection.Desc })
   }
   return results
 }
 
+export const calculatePricePerMonth = (pricePerHour: number) => {
+  const pricePerDay = pricePerHour * 24
+  return Number((pricePerDay * 30).toFixed(2))
+}
+
+export const convertPriceToMonthly = <TData extends { pricePerHour?: number }>(details: TData[]) =>
+  details.map(({ pricePerHour, ...rest }) => ({
+    pricePerMonth: pricePerHour ? calculatePricePerMonth(pricePerHour) : null,
+    ...rest,
+  }))
+
 export * from './responder'
-export * from './prices'

@@ -7,7 +7,8 @@ export const Ec2Schema = `#graphql
   }
   type Ec2Detail {
     name: String!
-    pricePerMonth: Float!
+    service: Service!
+    pricePerMonth: Float
     ram: Int!
     vCpu: Int!
   }

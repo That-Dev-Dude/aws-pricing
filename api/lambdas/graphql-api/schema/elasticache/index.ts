@@ -1,7 +1,8 @@
 export const ElasticacheSchema = `#graphql
   type ElasticacheDetail {
     name: String!
-    pricePerMonth: Float!
+    service: Service!
+    pricePerMonth: Float
     ram: Int!
     vCpu: Int!
     networkPerformance: String!
